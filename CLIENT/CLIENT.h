@@ -15,7 +15,7 @@ using namespace std;
 
 void connect(Player player)
 {
-	//Locals
+	//Local
 	long SUCCESSFUL;
 	WSAData WinSockData;
 	WORD DLLVersion;
