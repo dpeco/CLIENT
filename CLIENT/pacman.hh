@@ -564,15 +564,17 @@ Player play(Player player) //Funcio que actua com a escena joc
 	pacman.~thread();
 	fantasmes.~thread();
 
-	player.score = punts;
+	if (punts > player.score) player.score = punts; //highscore
 	currentGameState = MENU;
-	setCColor(color[7]);
+	
 
 	if (activateAchievementOne == true && player.a1 == false) player.a1 = true;
 	if (player.score > 50 && player.a2 == false) player.a2 = true;
 	if (punts > 100 && player.a3 == false) player.a3 = true;
 	if (clock() - begin_time > 30000 && player.a4 == false) player.a4 = true;
 	if (clock() - begin_time > 60000 && player.a5 == false) player.a5 = true;
-
+	
+	system("cls");
+	setCColor(color[6]);
 	return player;
 }

@@ -23,7 +23,7 @@ void menu()
 
 	cout << "			                     - MENU -" << endl;
 	cout << "1 - Jugar" << endl;
-	cout << "2 - Consultar Rànking" << endl;
+	cout << "2 - Consultar Ranking" << endl;
 	cout << "3 - Consultar millors puntuacions" << endl;
 	cout << "4 - Consultar Achievements" << endl;
 	cout << "5 - Sortir" << endl;
@@ -49,13 +49,16 @@ void menu()
 	case 5:
 		currentGameState = LEAVE;
 		break;
+	default:
+		currentGameState = MENU;
+		break;
 	}
 }
 
 //RANKING SCENE:
 void rankings(list<Result> ranking)
 {
-	std::cout << "TOP 10 idiots:\n\n";
+	std::cout << "TOP 10 scores:\n\n";
 
 	int i = 1;
 	for (list<Result>::const_iterator iterator = ranking.begin(); iterator != ranking.end(); ++iterator) {
@@ -92,8 +95,7 @@ void achievements(Player player)
 }
 
 int main() {
-
-	
+	setCColor(color[6]);
 	bool isRunning = true;
 	Player player;
 
@@ -102,10 +104,9 @@ int main() {
 
 	cout << "Please, enter your user name: ";
 	cin >> player.name;
-	connect(player.name);
+	player = cm::connect(player);
+	ranking = cm::GetRanking();
 	//CONEXION SECTION:
-
-	//GetData(player.name, player, ranking); //Filling up base startup data.
 
 	//SCENE MANAGER:
 	while (isRunning) {
@@ -118,6 +119,8 @@ int main() {
 		case PLAY:
 			system("cls");
 			player = play(player);
+			cm::SaveData(player);
+			ranking = cm::GetRanking();
 			break;
 		case RANKING:
 			system("cls");
