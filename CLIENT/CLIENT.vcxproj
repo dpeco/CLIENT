@@ -145,7 +145,7 @@
     <ClCompile Include="CLIENT.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CLIENT.h" />
+    <ClInclude Include="client.hh" />
     <ClInclude Include="pacman.hh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <list>
 #include <string>
-#include "client.h"
+#include "client.hh"
 #include "pacman.hh"
 
 using namespace std;

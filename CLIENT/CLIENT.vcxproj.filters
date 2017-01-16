@@ -20,10 +20,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CLIENT.h">
+    <ClInclude Include="pacman.hh">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pacman.hh">
+    <ClInclude Include="client.hh">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
